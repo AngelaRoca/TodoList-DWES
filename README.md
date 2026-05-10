@@ -4,7 +4,7 @@
 **Modulo:** Desarrollo Web en Entorno Servidor (DWES)
 **Centro:** CIFP La Laboral
 
-\---
+
 
 ## Descripcion
 
@@ -12,7 +12,7 @@ API REST para la gestion de tareas personales desarrollada con Spring Boot 4.
 Permite gestionar tareas, categorizarlas, etiquetarlas y controlar el acceso
 mediante roles de usuario (ADMIN, GESTOR, USER).
 
-\---
+
 
 ## Tecnologias utilizadas
 
@@ -27,7 +27,7 @@ mediante roles de usuario (ADMIN, GESTOR, USER).
 |SpringDoc OpenAPI|2.8.8 (Swagger)|
 |JJWT|0.11.5|
 
-\---
+
 
 ## Modelo de datos
 
@@ -57,7 +57,7 @@ mediante roles de usuario (ADMIN, GESTOR, USER).
 * Category 1 a N Task
 * Task N a N Tag
 
-\---
+
 
 ## Arquitectura
 
@@ -81,7 +81,7 @@ Cliente -> Controller -> Service -> Repository -> Base de datos
 |CategoryRequest/Response|Separa la entrada y salida de categorias para mayor control.|
 |TagRequest/Response|Separa la entrada y salida de tags.|
 
-\---
+
 
 ## Seguridad
 
@@ -115,7 +115,6 @@ La API utiliza **JWT (JSON Web Token)** con Spring Security en modo **Stateless*
 |gestor|gestor123|GESTOR|
 |angela|angela123|USER|
 
-\---
 
 ## Endpoints
 
@@ -195,7 +194,6 @@ La API utiliza **JWT (JSON Web Token)** con Spring Security en modo **Stateless*
 |GET|/api/users/me|Ver mi perfil|
 |PUT|/api/users/me|Actualizar mi perfil|
 
-\---
 
 ## Codigos de respuesta HTTP
 
@@ -211,7 +209,6 @@ La API utiliza **JWT (JSON Web Token)** con Spring Security en modo **Stateless*
 |409|Conflict - Conflicto (ej: usuario ya existe)|
 |500|Internal Server Error - Error interno del servidor|
 
-\---
 
 ## Documentacion Swagger
 
@@ -227,7 +224,6 @@ Para endpoints protegidos pulsa el boton **Authorize** e introduce:
 Bearer <token obtenido en login>
 ```
 
-\---
 
 ## Configuracion y arranque
 
@@ -286,8 +282,6 @@ server.port=8080
 4. Clic derecho en el proyecto -> Maven -> Update Project
 5. Clic derecho -> Run As -> Java Application
 6. Accede a http://localhost:8080/swagger-ui.html
-
-\---
 
 ## Estructura del proyecto
 
