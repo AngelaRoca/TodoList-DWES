@@ -240,12 +240,12 @@ Ejecuta este script en MySQL antes de arrancar:
 ```sql
 CREATE DATABASE IF NOT EXISTS todoList
   CHARACTER SET utf8mb4
-  COLLATE utf8mb4\_unicode\_ci;
+  COLLATE utf8mb4_unicode_ci;
 
-CREATE USER IF NOT EXISTS 'todo\_user'@'localhost'
-IDENTIFIED BY 'todo\_pass';
+CREATE USER IF NOT EXISTS 'todo_user'@'localhost'
+IDENTIFIED BY 'todo_pass';
 
-GRANT ALL PRIVILEGES ON todoList.\* TO 'todo\_user'@'localhost';
+GRANT ALL PRIVILEGES ON todoList.* TO 'todo_user'@'localhost';
 
 FLUSH PRIVILEGES;
 ```
@@ -256,14 +256,14 @@ FLUSH PRIVILEGES;
 spring.application.name=TodoList
 
 spring.datasource.url=jdbc:mysql://localhost:3306/todoList
-spring.datasource.username=todo\_user
-spring.datasource.password=todo\_pass
+spring.datasource.username=todo_user
+spring.datasource.password=todo_pass
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
-spring.jpa.properties.hibernate.format\_sql=true
+spring.jpa.properties.hibernate.format_sql=true
 
 app.jwt.secret=dGhpcyBpcyBhIHZlcnkgbG9uZyBzZWNyZXQga2V5IGZvciBqd3QgdG9rZW5zIGluIHNwcmluZyBib290IGFwcGxpY2F0aW9u
 app.jwt.expiration=86400000
