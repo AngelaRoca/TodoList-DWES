@@ -4,7 +4,7 @@
 **Modulo:** Desarrollo Web en Entorno Servidor (DWES)
 **Centro:** CIFP La Laboral
 
-\---
+
 
 ## Descripcion
 
@@ -12,7 +12,7 @@ API REST para la gestion de tareas personales desarrollada con Spring Boot 4.
 Permite gestionar tareas, categorizarlas, etiquetarlas y controlar el acceso
 mediante roles de usuario (ADMIN, GESTOR, USER).
 
-\---
+
 
 ## Tecnologias utilizadas
 
@@ -27,7 +27,7 @@ mediante roles de usuario (ADMIN, GESTOR, USER).
 |SpringDoc OpenAPI|2.8.8 (Swagger)|
 |JJWT|0.11.5|
 
-\---
+
 
 ## Modelo de datos
 
@@ -57,7 +57,7 @@ mediante roles de usuario (ADMIN, GESTOR, USER).
 * Category 1 a N Task
 * Task N a N Tag
 
-\---
+
 
 ## Arquitectura
 
@@ -81,7 +81,7 @@ Cliente -> Controller -> Service -> Repository -> Base de datos
 |CategoryRequest/Response|Separa la entrada y salida de categorias para mayor control.|
 |TagRequest/Response|Separa la entrada y salida de tags.|
 
-\---
+
 
 ## Seguridad
 
@@ -115,7 +115,6 @@ La API utiliza **JWT (JSON Web Token)** con Spring Security en modo **Stateless*
 |gestor|gestor123|GESTOR|
 |angela|angela123|USER|
 
-\---
 
 ## Endpoints
 
@@ -195,7 +194,6 @@ La API utiliza **JWT (JSON Web Token)** con Spring Security en modo **Stateless*
 |GET|/api/users/me|Ver mi perfil|
 |PUT|/api/users/me|Actualizar mi perfil|
 
-\---
 
 ## Codigos de respuesta HTTP
 
@@ -211,7 +209,6 @@ La API utiliza **JWT (JSON Web Token)** con Spring Security en modo **Stateless*
 |409|Conflict - Conflicto (ej: usuario ya existe)|
 |500|Internal Server Error - Error interno del servidor|
 
-\---
 
 ## Documentacion Swagger
 
@@ -227,7 +224,6 @@ Para endpoints protegidos pulsa el boton **Authorize** e introduce:
 Bearer <token obtenido en login>
 ```
 
-\---
 
 ## Configuracion y arranque
 
@@ -244,12 +240,12 @@ Ejecuta este script en MySQL antes de arrancar:
 ```sql
 CREATE DATABASE IF NOT EXISTS todoList
   CHARACTER SET utf8mb4
-  COLLATE utf8mb4\_unicode\_ci;
+  COLLATE utf8mb4_unicode_ci;
 
-CREATE USER IF NOT EXISTS 'todo\_user'@'localhost'
-IDENTIFIED BY 'todo\_pass';
+CREATE USER IF NOT EXISTS 'todo_user'@'localhost'
+IDENTIFIED BY 'todo_pass';
 
-GRANT ALL PRIVILEGES ON todoList.\* TO 'todo\_user'@'localhost';
+GRANT ALL PRIVILEGES ON todoList.* TO 'todo_user'@'localhost';
 
 FLUSH PRIVILEGES;
 ```
@@ -260,14 +256,14 @@ FLUSH PRIVILEGES;
 spring.application.name=TodoList
 
 spring.datasource.url=jdbc:mysql://localhost:3306/todoList
-spring.datasource.username=todo\_user
-spring.datasource.password=todo\_pass
+spring.datasource.username=todo_user
+spring.datasource.password=todo_pass
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
-spring.jpa.properties.hibernate.format\_sql=true
+spring.jpa.properties.hibernate.format_sql=true
 
 app.jwt.secret=dGhpcyBpcyBhIHZlcnkgbG9uZyBzZWNyZXQga2V5IGZvciBqd3QgdG9rZW5zIGluIHNwcmluZyBib290IGFwcGxpY2F0aW9u
 app.jwt.expiration=86400000
@@ -286,8 +282,6 @@ server.port=8080
 4. Clic derecho en el proyecto -> Maven -> Update Project
 5. Clic derecho -> Run As -> Java Application
 6. Accede a http://localhost:8080/swagger-ui.html
-
-\---
 
 ## Estructura del proyecto
 
