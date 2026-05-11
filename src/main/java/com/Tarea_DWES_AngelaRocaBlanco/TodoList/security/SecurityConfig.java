@@ -86,18 +86,35 @@ public class SecurityConfig {
         return http.build();
     }
 
+    // Define el proveedor de autenticacion que usara Spring Security.
+    // DaoAuthenticationProvider es el proveedor estandar que autentica
+    // usuarios consultando la base de datos a traves del UserDetailsService.
+    // Recibe el UserDetailsService para cargar el usuario por username.
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider(userDetailsService);
+        // Indica que las contraseñas se comparan usando BCrypt.
+        // Cuando el usuario hace login, Spring encripta la contrasena introducida
+        // y la compara con el hash guardado en la base de datos.
         provider.setPasswordEncoder(passwordEncoder());
         return provider;
     }
 
+    // Define el encriptador de contraseñas usando el algoritmo BCrypt.
+    // BCrypt es un algoritmo de hashing seguro que añade un "salt" aleatorio
+    // a cada contraseña, por lo que dos contraseñas iguales generan
+    // hashes diferentes. Es el estandar recomendado para contraseñas.
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+    
+    // Expone el AuthenticationManager como un bean de Spring.
+    // El AuthenticationManager es el componente central de Spring Security
+    // que gestiona el proceso de autenticacion.
+    // Lo necesitamos inyectado en el AuthService para autenticar
+    // al usuario cuando hace login con usuario y contrasena.
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
